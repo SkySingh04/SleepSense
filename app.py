@@ -1,6 +1,7 @@
 from flask import Flask, render_template, Response
 from camera import VideoCamera
 from flask_bootstrap import Bootstrap4
+from graphs import generateGraph
 
 app = Flask(__name__)
 bootstrap = Bootstrap4(app)
@@ -10,7 +11,9 @@ video_stream = VideoCamera()
 
 @app.route('/')
 def index():
-    return render_template('index.html',home=True)
+    with open('location.txt',"r") as f:
+        data = f.read()
+    return render_template('index.html',home=True,data=data)
 
 def gen(camera):
     while True:
@@ -31,6 +34,9 @@ def data():
 
 @app.route("/update")
 def update():
+    generateGraph()
+    with open('location.txt',"r") as f:
+        data = f.read()
     return render_template("index.html" , data=data , home=True)
 
 if __name__ == '__main__':
