@@ -1,10 +1,13 @@
 import cv2
+from drowsiness_detection import getDrowsy
 import pygame
 from pygame import mixer
-mixer.init()
-sound = mixer.Sound(r"Alarm-Fast-High-Pitch-A1-www.fesliyanstudios.com.mp3")
 
-from drowsiness_detection import getDrowsy
+
+mixer.init()
+sound = mixer.Sound(r"./mp3/Alarm-Fast-High-Pitch-A1-www.fesliyanstudios.com.mp3")
+
+
 class VideoCamera(object):
     def __init__(self):
         self.video = cv2.VideoCapture(0)

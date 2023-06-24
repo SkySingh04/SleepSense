@@ -9,7 +9,7 @@ def getDrowsy(ret_1 , frame_1):
 
 
     mixer.init()
-    sound = mixer.Sound(r"Alarm-Fast-High-Pitch-A1-www.fesliyanstudios.com.mp3")
+    sound = mixer.Sound("./mp3/Alarm-Fast-High-Pitch-A1-www.fesliyanstudios.com.mp3")
 
 
 
