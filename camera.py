@@ -2,7 +2,7 @@ import cv2
 from drowsiness_detection import getDrowsy
 import pygame
 from pygame import mixer
-# from location import getLocation
+from telegrambot import sendMessage
 from datetime import datetime 
 mixer.init()
 sound = mixer.Sound(r"./mp3/Alarm-Fast-High-Pitch-A1-www.fesliyanstudios.com.mp3")
@@ -35,6 +35,8 @@ class VideoCamera(object):
             current_time = now.strftime("%D:%H:%M:%S")
             with open('times.txt',"a") as f:
                         f.write(current_time  + "\n")
+            sendMessage()
+            
             # lat , lng = getLocation()
             # with open('location.txt',"a") as f:
             #             f.write(f"{lat}  {lng } \n")
