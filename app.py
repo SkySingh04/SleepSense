@@ -1,6 +1,10 @@
 from flask import Flask, render_template, Response
 from camera import VideoCamera
+from flask_bootstrap import Bootstrap4
+
 app = Flask(__name__)
+bootstrap = Bootstrap4(app)
+
 
 video_stream = VideoCamera()
 
