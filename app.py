@@ -24,5 +24,14 @@ def video_feed():
      return Response(gen(video_stream),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
+
+@app.route("/data")
+def data():
+    return render_template("graphs.html")
+
+@app.route("/update")
+def update():
+    return render_template("index.html" , data=data , home=True)
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', debug=True,port="5000")
