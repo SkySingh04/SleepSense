@@ -7,7 +7,7 @@ def getDrowsy(ret_1 , frame_1):
     leye = cv2.CascadeClassifier(".\haar cascade files\haarcascade_lefteye_2splits.xml")
     reye = cv2.CascadeClassifier(".\haar cascade files\haarcascade_righteye_2splits.xml")
     lbl=['Close','Open']
-    model = load_model(".\models\cnnCat2.h5")
+    model = load_model(r'/home/anonymous/Desktop/Drowsiness-Detector/models/cnnCat2.h5')
     path = os.getcwd()
     count=0
     score=0
