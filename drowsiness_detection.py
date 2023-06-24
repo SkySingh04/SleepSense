@@ -3,41 +3,20 @@ def getDrowsy(ret_1 , frame_1):
     import os
     from keras.models import load_model
     import numpy as np
-    import pygame
-    from pygame import mixer
     score=0
-
-
-    mixer.init()
-    sound = mixer.Sound("./mp3/Alarm-Fast-High-Pitch-A1-www.fesliyanstudios.com.mp3")
-
-
-
-    face = cv2.CascadeClassifier(".\haar cascade files\haarcascade_frontalface_alt.xml")
     leye = cv2.CascadeClassifier(".\haar cascade files\haarcascade_lefteye_2splits.xml")
     reye = cv2.CascadeClassifier(".\haar cascade files\haarcascade_righteye_2splits.xml")
-
-
-
     lbl=['Close','Open']
-
     model = load_model(".\models\cnnCat2.h5")
     path = os.getcwd()
-    font = cv2.FONT_HERSHEY_COMPLEX_SMALL
     count=0
     score=0
-    thicc=2
     rpred=[99]
     lpred=[99]
-
     ret, frame = ret_1 , frame_1
-
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    
-    faces = face.detectMultiScale(gray,minNeighbors=5,scaleFactor=1.1,minSize=(25,25))
     left_eye = leye.detectMultiScale(gray)
     right_eye =  reye.detectMultiScale(gray)
-
 
     for (x,y,w,h) in right_eye:
         r_eye=frame[y:y+h,x:x+w]
@@ -54,7 +33,7 @@ def getDrowsy(ret_1 , frame_1):
             lbl='Open' 
         if(rpred==0):
             lbl='Closed'
-        break
+            break
 
     for (x,y,w,h) in left_eye:
         l_eye=frame[y:y+h,x:x+w]
@@ -68,10 +47,11 @@ def getDrowsy(ret_1 , frame_1):
         lpred=np.where(lpred[0][0] < 0.5, 0, 1)
         
         if(lpred==1):
-            lbl='Open'   
+            lbl='Open'
+            break   
         if(lpred==0):
             lbl='Closed'
-        break
+            break
 
     if(rpred==1 and lpred==1):
         score=2
@@ -80,9 +60,5 @@ def getDrowsy(ret_1 , frame_1):
         score=-3
         print('Open')
   
-    if score==40:
-        try: 
-            pygame.mixer.stop()
-        except:
-            pass
+    
     return score

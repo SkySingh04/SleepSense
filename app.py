@@ -6,7 +6,7 @@ video_stream = VideoCamera()
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html',home=True)
 
 def gen(camera):
     while True:
