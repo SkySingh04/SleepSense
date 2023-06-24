@@ -79,14 +79,14 @@
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Extremely Cheap</h3>
-                            <p class="text-muted mb-0">Our Product helps drivers save upto xxx</p>
+                            <p class="text-muted mb-0">The Cost of production is only 7200 rupees!.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Accuracy</h3>
-                            <p class="text-muted mb-0">Our model is x% accurate!</p>
+                            <p class="text-muted mb-0">Our model is 95.97% accurate!</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
@@ -154,14 +154,42 @@
                         <div class="mt-5">
                             <h3 class="h4 mb-2">You last fell asleep at:</h3>
                             <p class="text-muted mb-0">{{data}}</p>
+                            <br />
+                            <img src="../static/assets/img/map.jpg" />
+
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 text-center">
                         <div class="m-5">
                             <h3 class="h4 mb-2">Graph of how drowsy your trip was:</h3>
-                            <p class="text-muted mb-0"><img src="../static/assets/img/drowsygraph.png" class="imagehbhaiya"/></p>
+                            <br />
+                            <br />
+                            <br />
+                            <p class="text-muted mb-0 m-10"><img src="../static/assets/img/drowsygraph.png" class="imagehbhaiya"/></p>
                         </div>
                     </div>
+                </div>
+                <h2 class="text-center m-lg-10 p-10">Conclusion:</h2>
+
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-6 col-md-6 text-center">
+                    <div class="m-5">
+                        <h3 class="h4 mb-2">You were most drowsy from:</h3>
+                        <h5 class="text-muted mb-0">{{drowsy_data}}</h5>
+                    </div>
+                    <div class="m-5">
+                        <h3 class="h4 mb-2">Optimal time for rest:</h3>
+                        <h5 class="text-muted mb-0">{{rest_data}}</h5>
+                    </div>
+                    
+                    </div>
+                    <div class="col-lg-6 col-md-6 text-center">
+                    <div class="m-5">
+                        <h3 class="h4 mb-2">Analysis of your day:</h3>
+                        <p class="text-muted mb-0"><img src="../static/assets/img/FatiguePrediction.png" class="imagehbhaiya"/></p>
+                    </div>
+                </div>
+                    
                     
                     <div class="col-lg-12 text-center">
                         <a class="btn btn-primary btn-xl" href="/update">Update Data</a>

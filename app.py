@@ -2,6 +2,10 @@ from flask import Flask, render_template, Response
 from camera import VideoCamera
 from flask_bootstrap import Bootstrap4
 from graphs import generateGraph
+import folium
+
+
+
 
 app = Flask(__name__)
 bootstrap = Bootstrap4(app)
@@ -13,7 +17,11 @@ video_stream = VideoCamera()
 def index():
     with open('location.txt',"r") as f:
         data = f.read()
-    return render_template('index.html',home=True,data=data)
+    with open('mostdrowsy.txt',"r") as f:
+        drowsy_data = f.read()
+    with open('optimalbreak.txt',"r") as f:
+        rest_data = f.read()
+    return render_template('index.html',home=True,data=data,drowsy_data=drowsy_data,rest_data=rest_data)
 
 def gen(camera):
     while True:
