@@ -3,6 +3,7 @@ def getDrowsy(ret_1 , frame_1):
     import os
     from keras.models import load_model
     import numpy as np
+
     score=0
     leye = cv2.CascadeClassifier(".\haar cascade files\haarcascade_lefteye_2splits.xml")
     reye = cv2.CascadeClassifier(".\haar cascade files\haarcascade_righteye_2splits.xml")
@@ -62,3 +63,14 @@ def getDrowsy(ret_1 , frame_1):
   
     
     return score
+def timetaken(code):
+    import time
+    if code==1:
+        start_time=time.time()
+    elif code==2:
+        end_time=time.time()
+    elif code==3:
+        print(end_time-start_time)
+        f=open('times.txt',"a")
+        f.write(str(end_time-start_time))
+        f.close()
