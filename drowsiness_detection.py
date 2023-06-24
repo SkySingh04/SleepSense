@@ -31,7 +31,6 @@ def getDrowsy(ret_1 , frame_1):
     lpred=[99]
 
     ret, frame = ret_1 , frame_1
-    # height,width = frame.shape[:2] 
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     
@@ -39,10 +38,6 @@ def getDrowsy(ret_1 , frame_1):
     left_eye = leye.detectMultiScale(gray)
     right_eye =  reye.detectMultiScale(gray)
 
-    #cv2.rectangle(frame, (0,height-50) , (200,height) , (0,0,0) , thickness=cv2.FILLED )
-
-    # for (x,y,w,h) in faces:
-    #     #cv2.rectangle(frame, (x,y) , (x+w,y+h) , (100,100,100) , 1 )
 
     for (x,y,w,h) in right_eye:
         r_eye=frame[y:y+h,x:x+w]
@@ -52,7 +47,6 @@ def getDrowsy(ret_1 , frame_1):
         r_eye= r_eye/255
         r_eye=  r_eye.reshape(24,24,-1)
         r_eye = np.expand_dims(r_eye,axis=0)
-        #rpred = model.predict_step(r_eye)
         rpred = model.predict(r_eye)
         rpred=np.where(rpred[0][0] < 0.5, 0, 1)
         
@@ -70,7 +64,7 @@ def getDrowsy(ret_1 , frame_1):
         l_eye= l_eye/255
         l_eye=l_eye.reshape(24,24,-1)
         l_eye = np.expand_dims(l_eye,axis=0)
-        lpred = model.predict(l_eye)#model.predict_classes(l_eye)
+        lpred = model.predict(l_eye)
         lpred=np.where(lpred[0][0] < 0.5, 0, 1)
         
         if(lpred==1):
@@ -80,49 +74,15 @@ def getDrowsy(ret_1 , frame_1):
         break
 
     if(rpred==1 and lpred==1):
-        score=1
-        #cv2.putText(frame,"Closed",(10,height-20), font, 1,(255,255,255),1,cv2.LINE_AA)
-    # if(rpred[0]==1 or lpred[0]==1):
+        score=2
+        print('Close')
     else:
         score=-3
-        #cv2.putText(frame,"Open",(10,height-20), font, 1,(255,255,255),1,cv2.LINE_AA)
-    
-    
-    
-    # if(score<0):
-    #     score=0   
-    # #cv2.putText(frame,'Score:'+str(score),(100,height-20), font, 1,(255,255,255),1,cv2.LINE_AA)
-    # if(score>40):
-    #     #person is feeling sleepy so we beep the alarm
-    #     #cv2.imwrite(os.path.join(path,'image.jpg'),frame)
-    #     # try:
-    #     if pygame.mixer.get_busy() == False:
-    #             sound.play()
-        
-            
-            #playsound(r'C:\Users\wwwyo\Downloads\archive (1)\Drowsiness detection\alarm.wav')
-        # except :  # isplaying = False
-        #     pass
-    
-        # if(thicc<16):
-        #     thicc= thicc+2
-        # else:
-        #     thicc=thicc-2
-        #     if(thicc<2):
-        #         thicc=2
-        # cv2.rectangle(frame,(0,0),(width,height),(0,0,255),thicc) 
-        
-    
+        print('Open')
+  
     if score==40:
         try: 
             pygame.mixer.stop()
         except:
             pass
     return score
-    #cv2.imshow('frame',frame)
-    
-    # if cv2.waitKey(1) & 0xFF == ord('q'):
-    #     break
-
-# cap.release()
-# cv2.destroyAllWindows()

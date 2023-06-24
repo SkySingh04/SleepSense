@@ -1,6 +1,8 @@
 import cv2
-import numpy
 import pygame
+from pygame import mixer
+mixer.init()
+sound = mixer.Sound(r"Alarm-Fast-High-Pitch-A1-www.fesliyanstudios.com.mp3")
 
 from drowsiness_detection import getDrowsy
 class VideoCamera(object):
@@ -19,34 +21,17 @@ class VideoCamera(object):
         
         
         self.count+=score
-        # if(count>40):
+        if(self.count>28):
         #     #person is feeling sleepy so we beep the alarm
-        #     #cv2.imwrite(os.path.join(path,'image.jpg'),frame)
-        #     # try:
-        #     if pygame.mixer.get_busy() == False:
-        #             sound.play()
-            
-                
-        #         playsound(r'C:\Users\wwwyo\Downloads\archive (1)\Drowsiness detection\alarm.wav')
-        #     except :  # isplaying = False
-        #         pass
-        
-        #     if(thicc<16):
-        #         thicc= thicc+2
-        #     else:
-        #         thicc=thicc-2
-        #         if(thicc<2):
-        #             thicc=2
-        #     cv2.rectangle(frame,(0,0),(width,height),(0,0,255),thicc) 
-            
-        
-        # if count==40:
-        #     try: 
-        #         pygame.mixer.stop()
-        #     except:
-        #         pass
-                # DO WHAT YOU WANT WITH TENSORFLOW / KERAS AND OPENCV
-        print(self.count)
+            if pygame.mixer.get_busy() == False:
+                    sound.play()
+             
+        if self.count==28:
+            try: 
+                pygame.mixer.stop()
+            except:
+                pass
+        print(score)
         ret, jpeg = cv2.imencode('.jpg', frame)
 
         return jpeg.tobytes()

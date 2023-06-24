@@ -1,7 +1,5 @@
-from flask import Flask, render_template, Response, jsonify
+from flask import Flask, render_template, Response
 from camera import VideoCamera
-import cv2
-
 app = Flask(__name__)
 
 video_stream = VideoCamera()
@@ -12,6 +10,7 @@ def index():
 
 def gen(camera):
     while True:
+        #This part of the code ensures we can see ourselves on the website, also prolly responsible for low framerate
         frame = camera.get_frame()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
