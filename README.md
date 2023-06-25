@@ -12,7 +12,7 @@ Of course, no one template will serve all projects since your needs may be diffe
 
 Use the `BLANK_README.md` to get started.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -22,10 +22,15 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+TTo host this on your local system you need.
 * npm
+* npm
+* npm
+* npm
+
+  
   ```sh
-  npm install npm@latest -g
+  pip install keras tensorflow flask 
   ```
 
 ### Installation
@@ -46,36 +51,22 @@ _Below is an example of how you can instruct your audience on installing and set
    const API_KEY = 'ENTER YOUR API';
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Future Scope
 
+We are planning to have two implementations of this product: one for B2C and the other for B2B. For B2B, we are planning a standalone device named SleepSense (pitched in the presentation). And for B2C, we are planning to extend SleepSense for a fleet of commercial vehicles, incorporating analytics and an admin panel.
 
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-
-<!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## Team
+## Team Members
 
-Akash - [akashsingh](https://github.com/username)
-Abhyuday - [akashsingh](https://github.com/username)
-Pragati - [akashsingh](https://github.com/username)
-Suvan - [suvanbanerjee](https://github.com/suvanbanerjee)
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+Akash - [akashsingh](https://github.com/Akash-Singh04) <br>
+Abhyuday - [akashsingh](https://github.com/username) <br>
+Pragati - [akashsingh](https://github.com/username) <br>
+Suvan - [suvanbanerjee](https://github.com/suvanbanerjee) <br>
+<br>
+Project Link: [SleepSense](https://github.com/Akash-Singh04/Drowsiness-Detector)
