@@ -45,6 +45,7 @@ def most_Drowsy():
         f.write(str(i-1)+'hrs To '+str(i)+'hrs'+'\n')
         f.close()
     
+    
 def fatiguepredictions():
     with open("times.txt", "r") as file:
         datetime_data = file.readlines()
