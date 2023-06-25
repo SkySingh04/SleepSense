@@ -38,8 +38,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Team Members
 
 Akash - [akashsingh](https://github.com/Akash-Singh04) <br>
-Abhyuday - [akashsingh](https://github.com/username) <br>
-Pragati - [akashsingh](https://github.com/username) <br>
+Abhyuday - [abhyudayhari](https://github.com/abhyudayhari) <br>
+Pragati - [pragatiRajB](https://github.com/pragatiRajB) <br>
 Suvan - [suvanbanerjee](https://github.com/suvanbanerjee) <br>
 <br>
 Project Link: [SleepSense](https://github.com/Akash-Singh04/Drowsiness-Detector)
