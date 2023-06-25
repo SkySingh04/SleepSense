@@ -1,4 +1,7 @@
 from datetime import datetime
+import matplotlib
+
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 def most_Drowsy():
@@ -32,12 +35,12 @@ def most_Drowsy():
     l=list(final_dict.keys())
    
     i=l[0]
-    f=open('mostdrowsy.txt','a')
+    f=open('mostdrowsy.txt','w')
     f.write(str(i)+'hrs To '+str(i+1)+'hrs  '+'\n')
         
     f.close()
     i=l[0]
-    with open('optimalbreak.txt','a') as f:
+    with open('optimalbreak.txt','w') as f:
         
         f.write(str(i-1)+'hrs To '+str(i)+'hrs'+'\n')
         f.close()

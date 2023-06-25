@@ -2,8 +2,9 @@ from flask import Flask, render_template, Response
 from camera import VideoCamera
 from flask_bootstrap import Bootstrap4
 from graphs import generateGraph
-import folium
-
+from conclusions import most_Drowsy , fatiguepredictions
+from multiprocessing.pool import ThreadPool
+pool=ThreadPool(processes=10)
 
 
 
@@ -26,7 +27,9 @@ def index():
 def gen(camera):
     while True:
         #This part of the code ensures we can see ourselves on the website, also prolly responsible for low framerate
-        frame = camera.get_frame()
+        a = pool.apply_async(camera.get_frame)
+        
+        frame=a.get()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
@@ -43,9 +46,15 @@ def data():
 @app.route("/update")
 def update():
     generateGraph()
+    most_Drowsy()
+    fatiguepredictions()
     with open('location.txt',"r") as f:
         data = f.read()
-    return render_template("index.html" , data=data , home=True)
-
+    with open('mostdrowsy.txt',"r") as f:
+        drowsy_data = f.read()
+    with open('optimalbreak.txt',"r") as f:
+        rest_data = f.read()
+    return render_template('index.html',home=True,data=data,drowsy_data=drowsy_data,rest_data=rest_data)
+    
 if __name__ == '__main__':
     app.run(host='127.0.0.1', debug=True,port="5000")
