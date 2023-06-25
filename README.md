@@ -1,6 +1,9 @@
 # Drowsiness Detector
 ## About The Project
 
+The increasing prevalence of drowsy driving incidents necessitates the development of an intelligent system that can proactively identify signs of driver fatigue. The absence of a robust and efficient drowsiness detection technology hinders the prevention of accidents caused by drowsy drivers.
+
+So what we come up with is a drowsy face detector that can track peoples eyes and based on this tells if he/she is drowsy or not in real time and give then a audio alert to wake up. Further more it can also tell give a detailed report of trip after the journey
 
 ## Getting Started
 Just go ahead and clone this repo on you local system and follow the steps below :)
