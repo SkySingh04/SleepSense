@@ -1,4 +1,4 @@
-# Drowsiness Detector
+# SleepSense
 ## About The Project
 
 The increasing prevalence of drowsy driving incidents necessitates the development of an intelligent system that can proactively identify signs of driver fatigue. The absence of a robust and efficient drowsiness detection technology hinders the prevention of accidents caused by drowsy drivers.
