@@ -22,8 +22,9 @@ To host this on your local system you need.
   ```
 
 ### Usage
+1.Add the necessary API keys to the .env file
 
-Just run the app.py and follow the link on the terminal!
+2.Just run the app.py and follow the link on the terminal!
 
 ## Future Scope
 
