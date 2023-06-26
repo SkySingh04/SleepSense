@@ -3,10 +3,6 @@ from camera import VideoCamera
 from flask_bootstrap import Bootstrap4
 from graphs import generateGraph
 from conclusions import most_Drowsy , fatiguepredictions
-from multiprocessing.pool import ThreadPool
-pool=ThreadPool(processes=10)
-
-
 
 app = Flask(__name__)
 bootstrap = Bootstrap4(app)
@@ -27,9 +23,8 @@ def index():
 def gen(camera):
     while True:
         #This part of the code ensures we can see ourselves on the website, also prolly responsible for low framerate
-        a = pool.apply_async(camera.get_frame)
+        frame = camera.get_frame()
         
-        frame=a.get()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 

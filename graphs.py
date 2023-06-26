@@ -48,3 +48,4 @@ def generateGraph():
     # Display the plot
 
     plt.savefig('./static/assets/img/drowsygraph.png')
+generateGraph()
