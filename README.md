@@ -1,46 +1,37 @@
 # SleepSense
-## About The Project
 
-The increasing prevalence of drowsy driving incidents necessitates the development of an intelligent system that can proactively identify signs of driver fatigue. The absence of a robust and efficient drowsiness detection technology hinders the prevention of accidents caused by drowsy drivers.
+SleepSense is an innovative solution designed to detect drowsiness in real-time, primarily aimed at preventing accidents caused by drowsy driving incidents. Leveraging a drowsy face detector, it tracks individuals' eyes to determine their drowsiness level and provides real-time audio alerts to prevent accidents. Additionally, it offers a detailed trip report after the journey.
 
-So what we come up with is a drowsy face detector that can track peoples eyes and based on this tells if he/she is drowsy or not in real time and give then a audio alert to wake up. Further more it can also tell give a detailed report of trip after the journey
+## Key Features
 
-## Getting Started
-Just go ahead and clone this repo on you local system and follow the steps below :)
+- **Real-Time Drowsiness Detection**: Utilizes a drowsy face detector to track eye movements and assess the level of drowsiness in real-time.
+- **Audio Alerts**: Provides immediate audio alerts to wake up drowsy individuals, preventing potential accidents.
+- **Trip Report**: Generates a comprehensive trip report post-journey, offering insights into drowsiness levels throughout the trip.
 
-### Prerequisites
+## Contributing
 
-To host this on your local system you need.
-* Keras
-* Flask
-* Tensorflow
-* pygame
-* Matplotlib
-  
-  ```sh
-  pip install keras tensorflow flask flask_bootstrap pygame matplotlib
-  ```
+- Please check the [Contributions](https://github.com/Akash-Singh04/SleepSense/blob/master/CONTRIBUTING.md) file for instructions on how to get started with the project on your local system.
+- Contributions are welcome! Feel free to fork the repository, make improvements, and create pull requests.
+- Please view the list of open issues at [Issues](https://github.com/Akash-Singh04/SleepSense/issues). Any contributions to them are welcome.
 
-### Usage
-1.Add the necessary API keys to the .env file
+## Tech Stack
 
-2.Just run the app.py and follow the link on the terminal!
+- **Python Flask**: Backend server framework.
+- **HTML, CSS, Bootstrap**: Frontend development and styling.
+- **Image Processing**: Utilized for eye tracking and drowsiness assessment.
 
 ## Future Scope
 
-We are planning to have two implementations of this product: one for B2C and the other for B2B. For B2B, we are planning a standalone device named SleepSense (pitched in the presentation). And for B2C, we are planning to extend SleepSense for a fleet of commercial vehicles, incorporating analytics and an admin panel.
+SleepSense aims to have two implementations: B2C and B2B. For B2B, a standalone device named SleepSense is planned. For B2C, SleepSense will be extended to a fleet of commercial vehicles, integrating analytics and an admin panel.
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-
+Distributed under the [MIT License](LICENSE).
 
 ## Team Members
 
-Akash - [akashsingh](https://github.com/Akash-Singh04) <br>
-Abhyuday - [abhyudayhari](https://github.com/abhyudayhari) <br>
-Pragati - [pragatiRajB](https://github.com/pragatiRajB) <br>
-Suvan - [suvanbanerjee](https://github.com/suvanbanerjee) <br>
-<br>
-Project Link: [SleepSense](https://github.com/Akash-Singh04/Drowsiness-Detector)
+- **Akash** - [akashsingh](https://github.com/Akash-Singh04)
+- **Abhyuday** - [abhyudayhari](https://github.com/abhyudayhari)
+- **Pragati** - [pragatiRajB](https://github.com/pragatiRajB)
+- **Suvan** - [suvanbanerjee](https://github.com/suvanbanerjee)
+
